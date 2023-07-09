@@ -43,9 +43,9 @@ def email():
             db.session.add(new_item)
             db.session.commit()
 
-            return "signup success!", 200
+            return jsonify(message="successful signup"), 200
         else:
-            return "fail", 400
+            return jsonify(message="failed signup"), 400
     else:
         return "invalid request", 400
 
